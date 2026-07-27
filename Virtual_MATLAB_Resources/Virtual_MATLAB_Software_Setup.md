@@ -1,6 +1,6 @@
 # Virtual MATLAB Software Setup 🪧 <!-- omit in toc -->
 
-Please go through the following steps to set up a computer to use the QCar with MATLAB in Quanser Interactive Labs.
+Please go through the following steps to set up a computer with the Quanser Interactive Labs add-on to participate in Virtual ONLY competitions. 
 
 ## Description <!-- omit in toc -->
 
@@ -15,17 +15,17 @@ This document will cover the following:
 
 ## System Requirements
 
-`Installation Time:` It will take around **2 hours** to install everything
+`Installation Time:` It will take around **30** to install everything
 
-`Storage:`: Installing everything will consume around **35GB of storage**
+`Storage:`: Installing everything will consume around **3GB of storage**
 
 `OS:` Windows 10 or 11
 
 `MATLAB Version:` 2024a or higher
 
-`MATLAB Toolboxes:` Simulink Coder, MATLAB Coder, and Control System Toolbox
+`MATLAB Toolboxes:` Control Systems Toolbox
 
-`C++ Compiler:` [Visual Studio 2019 Community](https://quanserinc.box.com/s/ffe1ud4hikxdau9qwdlxf0ali07d1l6c) (Desktop development with C++)
+`C++ Compiler:` Not Required
 
 `Minimum Hardware:`
 
