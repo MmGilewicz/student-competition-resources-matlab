@@ -15,7 +15,7 @@ else
 end
 
 % Is git installed?
-[status, ~] = system('git --version');
+[status, ~] = system('git --version', '-echo');
 
 if status == 0
     fprintf('git has been detected, nice ....\n')
@@ -28,17 +28,25 @@ else
     % install git if desired
     switch answer
         case 'yes'
-            [status, cmdout] = system('winget install --id Git.Git -e --silent --accept-source-agreements --accept-package-agreements');
+            [status, cmdout] = system('winget install --id Git.Git -e --silent --accept-source-agreements --accept-package-agreements', '-echo');
         case 'no'
-            errorMsg('git not detected and will not be installed')
+            error('git not detected and will not be installed')
     end
     % check the result of installing
     if status == 0
         print('Successfully installed git!\n')
     else
         print(cmdout)
-        errorMsg('Could not install git ....')
+        error('Could not install git ....')
     end
+end
+
+% recheck git was installed
+[status, ~] = system('git --version');
+if status == 0
+    git_installed_flag = true;
+else
+    error('git is still not being detected after attempted installation ....')
 end
 
 %% Setup QLabs
@@ -139,7 +147,7 @@ end
 
 % CHANGE BRANCH TO VIRTUAL ONLY ONCE COMPLETED
 competitionRepoURL = 'https://github.com/quanser/student-competition-resources-matlab.git';
-if ~competition_dir_exists_flag
+if ~competition_dir_exists_flag && git_installed_flag
     % competition repo with system git
     disp('Attempting to clone the Student Competition Repository ....')
     disp('This could take a few minutes ....')
@@ -159,7 +167,7 @@ end
 %% Clone Academic Repo
 academicRepoURL = 'https://github.com/quanser/Quanser_Academic_Resources.git';
 % clone academic repo with system git
-if ~quanser_dir_exists_flag
+if ~quanser_dir_exists_flag && git_installed_flag
     disp('Attempting to clone the Quanser Academic Repo ....')
     disp('This could take several minutes as the repository is large ....')
     command = ['git clone ', academicRepoURL, ' ', quanser_dir];
