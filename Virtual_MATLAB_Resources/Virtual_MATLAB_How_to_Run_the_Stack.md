@@ -1,5 +1,7 @@
 # How to Run the Self Driving Stack 🪧 <!-- omit in toc -->
 
+Everything pertaining to running the `/self_driving_stack_resources` is found here.
+
 ## Description <!-- omit in toc -->
 
 Please use the following guide to run the Self Driving Stack after completing the [Virtual Software Setup Guide](./Virtual_MATLAB_Software_Setup.md) or the
@@ -19,31 +21,11 @@ Follow the below instructions to make sure everything is set up correctly and le
 
     ![qlabs plane](../Pictures/plane_world_qlabs.png)
 
-3. Run the `Setup_Competition_Map.m` script
+3. Run the `Virtual_Setup_Competition_Map.m` script and select the option `n` when prompted to `Setup real scenario?`
 
-    - Make sure the `spawn_location` variable is `1` (top of the script)
+4. Use `run` button to run the model
 
-    It should look like this after running the script:
-
-    ![competition map](../Pictures/qlabs_setup_competition_map.png)
-
-4. Open `QCar2_Virtual_calibrate.slx`
-
-5. Use 'Monitor & Tune' to run the model
-
-    ![competition map](../Pictures/monitor_and_tune.png)
-
-6. Change `spawn_location` to `2` in the `Setup_Competition_Map.m` script
-
-7. Run `Setup_Competition_Map.m` to spawn the QCar in the taxi hub area
-
-8. Run `Setup_QCar2_Params.m`
-
-9. Open `VIRTUAL_self_driving_stack_v2.slx`
-
-10. Use 'Monitor & Tune' to run the model
-
-    ![competition map](../Pictures/monitor_and_tune.png)
+   ![competition map](../Pictures/simulink_run_button.png)
 
 You should see the QCar begin to complete a lap of the outside-most lane as shown below (sped up):
 
@@ -53,7 +35,11 @@ If something is not working correctly, please double-check that you have gone th
 
 ## MATLAB Setup Real Scenario
 
-A more realistic traffic scenario is provided through the [`Setup_Real_Scenario.m`](../Virtual_MATLAB_Resources/self_driving_stack_resources/Setup_Real_Scenario.m) file. This script spawns signage and traffic lights. This script runs CONTINUOUSLY in a loop to control the traffic lights, so it will need to be run in a separate MATLAB session from the `VIRTUAL_self_driving_stack_v2.slx`. To open another session of matlab, you will need to right-click on the MATLAB icon and select your version of MATLAB again.
+In the `Setup_QCar2_Params.m` script, you will be prompted to setup the real scenario if it is desired.
+
+A more realistic traffic scenario is provided through the [`Setup_Real_Scenario.m`](../Virtual_MATLAB_Resources/self_driving_stack_resources/Setup_Real_Scenario.m) file. This script spawns signage and traffic lights. 
+
+This script runs CONTINUOUSLY in a loop to control the traffic lights, so the `Setup_QCar2_Params.m` will open a MATLAB Command Window to run the script in a separate instance of MATLAB.
 
 ## Learning the Self-Driving Stack
 

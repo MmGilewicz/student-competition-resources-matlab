@@ -1,6 +1,6 @@
 # Manual Setup of Virtual MATLAB Software 🪧 <!-- omit in toc -->
 
-Please go through the following steps to set up a computer with the Quanser Interactive Labs add-ons without using the provided script
+Please go through the following steps to set up a computer with the Quanser Interactive Labs add-ons without using the [provided script]()
 
 ## Description <!-- omit in toc -->
 
@@ -68,7 +68,7 @@ Follow the below steps to set up QLabs with MATLAB for Virtual ONLY:
 2. Run the following batch file with the following guidelines:
 
     - You are using MATLAB only
-    - You are using both virtual and hardware
+    - You are using ONLY Virtual
 
     `C:\Users\<username>\Documents\Quanser\1_setup\step_1_check_requirements.bat`
 
